@@ -20,3 +20,11 @@ jobs:
 
       - name: Run main.py
         run: python main.py
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          GCP_KEY_BASE64: ${{ secrets.GCP_KEY_BASE64 }}
+        run: python main.py 
