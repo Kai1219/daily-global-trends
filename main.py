@@ -1,9 +1,9 @@
 from trendspy import Trends
 from datetime import datetime
 import pygsheets
-import json
 import os
 import base64
+import pytz
 
 # 從 GitHub Secrets 讀取並寫入暫存的憑證檔案
 key_base64 = os.environ.get("GCP_KEY_BASE64")
@@ -15,6 +15,12 @@ if not key_base64:
 with open(key_path, "w") as f:
     f.write(base64.b64decode(key_base64).decode("utf-8"))
 
+# 指定時區為台北
+tz = pytz.timezone("Asia/Taipei")
+tw_zone = datetime.now(tz)
+
+current_time = tw_zone.strftime("%Y-%m-%d %H:%M:%S")
+
 # 初始化 Trends 物件
 tr = Trends()
 
@@ -22,10 +28,6 @@ tr = Trends()
 df = tr.trending_now(geo='TW')
 
 data = []
-
-current_date_time = datetime.now()
-current_time = current_date_time.strftime("%Y-%m-%d %H:%M:%S")
-
 for item in df:
     region=item.geo
     keyword=item.keyword
