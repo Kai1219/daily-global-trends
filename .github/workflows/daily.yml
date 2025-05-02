@@ -18,13 +18,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run main.py
-        run: python main.py
-
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run script
+      - name: Run main.py
         env:
           GCP_KEY_BASE64: ${{ secrets.GCP_KEY_BASE64 }}
-        run: python main.py 
+        run: python main.py
