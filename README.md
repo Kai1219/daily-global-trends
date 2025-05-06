@@ -43,7 +43,7 @@
 
 ## 🔍 線上儀表板
 
-[👉 查看 Looker Studio 報表]([https://lookerstudio.google.com/s/your-dashboard-id](https://lookerstudio.google.com/reporting/52358280-7b0e-4da4-b5ea-f97c90f261b2))
+[👉 查看 Looker Studio 報表](https://lookerstudio.google.com/reporting/52358280-7b0e-4da4-b5ea-f97c90f261b2)
 
 ---
 
